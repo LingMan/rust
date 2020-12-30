@@ -253,7 +253,7 @@ impl MetaItem {
     ///
     /// In here, it'll return a span for `"foo"`.
     pub fn name_value_literal_span(&self) -> Option<Span> {
-        Some(self.name_value_literal()?.span)
+        self.name_value_literal().map(|lit| lit.span)
     }
 }
 
